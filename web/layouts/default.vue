@@ -28,17 +28,15 @@
         open-on-hover
         offset-x
         offset-y
-        close-on-click
-        close-on-content-click
       >
         <template v-slot:activator="{ on }">
           <v-avatar 
             v-on="on"
             tile
-            color="red"
+            color="white"
             size="44"
             class="mx-8"
-          ><img src="https://i.pravatar.cc/300">
+          ><img src="https://i.pravatar.cc/100">
           </v-avatar>
         </template>
         <v-list>
@@ -46,13 +44,13 @@
             <v-list-item-title> Kiona Anh </v-list-item-title> 
             <my-link class="ml-4" to="/login">Switch</my-link>
           </v-list-item>
-          <v-list-item @click=""> 
+          <v-list-item to="/login"> 
             <v-list-item-title> Account </v-list-item-title> 
           </v-list-item>
-          <v-list-item @click=""> 
+          <v-list-item to="/login"> 
             <v-list-item-title> Help Center </v-list-item-title> 
           </v-list-item>
-          <v-list-item @click=""> 
+          <v-list-item to="/login"> 
             <v-list-item-title> Sign Out </v-list-item-title> 
           </v-list-item>
         </v-list>
@@ -86,9 +84,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .link-active {
-    background: red;
-  }
+<style scoped>
 
 </style>

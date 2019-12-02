@@ -1,9 +1,7 @@
 <template>
-  <v-hover v-slot:default="{ hover }">
-    <v-btn text nuxt small exact active-class="link-active" :class="{ 'link-active': hover }" :to="to">
-      <slot/>
-    </v-btn>
-  </v-hover>
+  <v-btn text nuxt small exact active-class="link" :to="to">
+    <slot/>
+  </v-btn>
 </template>
 
 <script>
@@ -17,9 +15,8 @@ export default {
 }
 </script>
 
-<style scope>
-  .link-active:before {
-    font-size: 1.1rem;
-    background: none;
+<style scoped>
+  .link {
+    background: red;
   }
 </style>

@@ -35,9 +35,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .link-active {
-    background: red;
-  }
+<style scoped>
 
 </style>
