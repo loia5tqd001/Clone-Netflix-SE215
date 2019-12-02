@@ -1,88 +1,73 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
+    <v-app-bar app>
+      <nuxt-link to="/">
+        <v-img
+          class="mx-8 my-4"
+          src="../netflix_logo.svg"
+          max-height="100%"
+          max-width="120"
+        ></v-img>
+      </nuxt-link>
+
+      <v-btn text small nuxt exact active-class="link-active" to="/">Home</v-btn>
+      <v-btn text small nuxt exact active-class="link-active" to="/history">History</v-btn>
+      <v-btn text small nuxt exact active-class="link-active" to="/my-list">My List</v-btn>
+      <v-btn text small nuxt exact active-class="link-active" to="/recently-added">Recently Added</v-btn>
+      <v-btn text small nuxt exact active-class="link-active" to="/reviews">Reviews</v-btn>
+
+      <v-spacer></v-spacer>
+
+      <v-text-field 
+        clearable 
+        color="white"
+        class="ml-12 mt-4"
+        append-icon="mdi-magnify"
+      ></v-text-field>
+
+      <v-menu
+        open-on-hover
+        offset-x
+        offset-y
+        close-on-click
+        close-on-content-click
       >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+        <template v-slot:activator="{ on }">
+          <v-avatar 
+            v-on="on"
+            tile
+            color="red"
+            size="44"
+            class="mx-8"
+          ><img src="https://i.pravatar.cc/300">
+          </v-avatar>
+        </template>
+        <v-list>
+          <v-list-item> 
+            <v-list-item-title> Kiona Anh </v-list-item-title> 
+            <v-btn text large nuxt to="/login">Switch</v-btn>
+          </v-list-item>
+          <v-list-item @click=""> 
+            <v-list-item-title> Account </v-list-item-title> 
+          </v-list-item>
+          <v-list-item @click=""> 
+            <v-list-item-title> Help Center </v-list-item-title> 
+          </v-list-item>
+          <v-list-item @click=""> 
+            <v-list-item-title> Sign Out </v-list-item-title> 
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
     </v-app-bar>
+
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
+
+    <v-footer>
       <span>&copy; 2019</span>
     </v-footer>
   </v-app>
@@ -92,26 +77,14 @@
 export default {
   data () {
     return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .link-active {
+    background: red;
+  }
+
+</style>
