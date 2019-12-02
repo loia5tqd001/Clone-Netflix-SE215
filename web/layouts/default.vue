@@ -10,12 +10,11 @@
         ></v-img>
       </nuxt-link>
 
-      <v-btn text small nuxt exact active-class="link-active" to="/">Home</v-btn>
-      <v-btn text small nuxt exact active-class="link-active" to="/history">History</v-btn>
-      <v-btn text small nuxt exact active-class="link-active" to="/my-list">My List</v-btn>
-      <v-btn text small nuxt exact active-class="link-active" to="/recently-added">Recently Added</v-btn>
-      <v-btn text small nuxt exact active-class="link-active" to="/reviews">Reviews</v-btn>
-
+      <my-link to="/">Home</my-link>
+      <my-link to="/history">History</my-link>
+      <my-link to="/my-list">My List</my-link>
+      <my-link to="/recently-added">Recently Added</my-link>
+      <my-link to="/reviews">Reviews</my-link>
       <v-spacer></v-spacer>
 
       <v-text-field 
@@ -45,7 +44,7 @@
         <v-list>
           <v-list-item> 
             <v-list-item-title> Kiona Anh </v-list-item-title> 
-            <v-btn text large nuxt to="/login">Switch</v-btn>
+            <my-link class="ml-4" to="/login">Switch</my-link>
           </v-list-item>
           <v-list-item @click=""> 
             <v-list-item-title> Account </v-list-item-title> 
@@ -74,7 +73,12 @@
 </template>
 
 <script>
+import MyLink from '~/components/MyLink'
+
 export default {
+  components: {
+    MyLink
+  },
   data () {
     return {
     }

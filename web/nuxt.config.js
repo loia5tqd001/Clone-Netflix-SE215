@@ -27,6 +27,10 @@ export default {
   css: [
     '~assets/main.css'
   ],
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in'
+  },
   /*
   ** Plugins to load before mounting the App
   */
