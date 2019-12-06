@@ -6,9 +6,13 @@
       hover :img="srcImg"
       height="300"
     >
-
+    <div class="overlay">
       <play-button class="play-btn align-self-center justify-self-center"></play-button>
       <v-card-title class="card-title justify-center headline font-weight-bold">{{ title }}</v-card-title>
+      <v-card-subtitle class="card-title justify-center headline font-weight-bold">{{ title }}</v-card-subtitle>
+      <v-card-text class="card-title justify-center headline font-weight-bold">{{ title }}</v-card-text>
+    </div>
+
     </v-card>
   </v-container>
 </template>
@@ -28,39 +32,33 @@ export default {
 </script>
 
 <style scoped>
-  .card {
+  .card, .overlay {
     transition: transform .2s;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 500px;
   }
-  .card:hover {
+  .overlay {
+    /* background: rgba(0,0,0,.1); */
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,.5) 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .card:hover, 
+  .overlay:hover {
     transform: scale(1.02);
   }
-  .card::before {
-    content: '';
-    background: rgba(0,0,0,.1);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-  }
-  .card:hover::before {
-    background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,.5) 100%);
-  }
-  .card .card-title {
-    position: absolute;
-    bottom: 20px;
-  }
-  .card .play-btn,
-  .card .card-title {
+  .card .overlay {
     opacity: 0;
     transition: opacity .2s;
   }
-  .card:hover .play-btn,
-  .card:hover .card-title {
+  .card:hover .overlay {
     opacity: 1;
   }
 </style>

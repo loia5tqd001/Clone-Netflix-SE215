@@ -29,7 +29,7 @@
         offset-x
         offset-y
       >
-        <template v-slot:activator="{ on }">
+        <template #activator="{ on }">
           <v-avatar 
             v-on="on"
             tile
