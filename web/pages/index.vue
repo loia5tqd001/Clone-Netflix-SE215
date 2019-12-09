@@ -18,7 +18,7 @@
     </v-row>
 
     <v-row>
-      <netflix-carousel></netflix-carousel>
+      <carousel></carousel>
     </v-row>
   </v-container>
 </template>
@@ -26,13 +26,14 @@
 <script>
 import CardHome from "~/components/CardHome";
 import CardBrowse from "~/components/CardBrowse";
-import NetflixCarousel from '~/components/NetflixCarousel'
+// import NetflixCarousel from '~/components/NetflixCarousel'
+import Carousel from '~/components/Carousel'
 
 export default {
   components: {
     CardHome,
     CardBrowse,
-    NetflixCarousel
+    Carousel
   },
   data() {
     return {};
