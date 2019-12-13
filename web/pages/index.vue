@@ -1,6 +1,10 @@
 <template>
   <v-container>
 
+    <movie-card></movie-card>
+    <movie-card></movie-card>
+    <movie-card></movie-card>
+
     <v-row>
       <v-col cols="12" sm="8" md="6">
         <card-home
@@ -32,12 +36,14 @@
 import CardHome from "~/components/CardHome";
 import CardBrowse from "~/components/CardBrowse";
 import Carousel from "~/components/Carousel";
+import MovieCard from "~/components/MovieCard";
 
 export default {
   components: {
     CardHome,
     CardBrowse,
     Carousel,
+    MovieCard
   },
   data() {
     return {};
