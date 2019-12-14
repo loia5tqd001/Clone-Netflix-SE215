@@ -120,6 +120,37 @@ export default {
         color: #0f0;
         font-weight: bold;
       }
+
+      .MovieCard-movie-category {
+        /* https://stackoverflow.com/q/59339023/9787887 */
+        font-size: .8em;
+        display: inline-flex;
+        justify-content: space-between;
+
+        > span:not(:last-child) {
+          $distance: 1em;
+          $half-distance: $distance / 2;
+          margin: 0 $distance 0 0;
+
+          position: relative;
+          
+          &::after {
+            $size: .2em;
+            $half-size: $size / 2;
+
+            content: '';
+            position: absolute;
+            top: calc(50% - #{$half-size});
+            left: calc(100% + #{$half-distance} - #{$half-size});
+
+            display: block;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            background: $color--white-subtle;
+          }
+        }
+      }
     }
   }
 
