@@ -36,7 +36,7 @@
             color="white"
             size="44"
             class="mx-8"
-          ><img src="https://i.pravatar.cc/100">
+          ><img class="avatar" src="https://i.pravatar.cc/100">
           </v-avatar>
         </template>
         <v-list>
@@ -59,9 +59,7 @@
     </v-app-bar>
 
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt/>
     </v-content>
 
     <v-footer>
@@ -85,5 +83,8 @@ export default {
 </script>
 
 <style scoped>
-
+  .avatar {
+    border-radius: 10%;
+    box-shadow: 0 4px 15px #0008;
+  }
 </style>

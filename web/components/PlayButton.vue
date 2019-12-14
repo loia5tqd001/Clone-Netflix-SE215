@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="-wrapper">
     <v-icon light color="#db0000" :size="size">mdi-play</v-icon>
   </div>
 </template>
@@ -15,11 +15,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
   * {
     --size: 2.5rem;
   }
-  .wrapper {
+  .-wrapper {
     width: var(--size);
     height: var(--size);
     background: $color--white-subtle;

@@ -1,10 +1,33 @@
 <template>
-  <v-container>
+  <v-container fluid>
 
-    <movie-card></movie-card>
-    <movie-card></movie-card>
-    <movie-card></movie-card>
+    <main-carousel></main-carousel>
 
+    <!-- <v-row>
+     <v-carousel
+      cycle
+      height="400"
+      hide-delimiters
+      show-arrows-on-hover
+      multiple
+      :value="colors"
+    >
+      <v-carousel-item
+        v-for="(color, i) in colors"
+        :key="i"
+      >
+        <movie-card></movie-card>
+        <movie-card></movie-card>
+        <movie-card></movie-card>
+        
+        
+      </v-carousel-item>
+    </v-carousel>
+    </v-row> -->
+
+    <!-- <movie-card></movie-card>
+    <movie-card></movie-card> -->
+<!-- 
     <v-row>
       <v-col cols="12" sm="8" md="6">
         <card-home
@@ -19,15 +42,10 @@
           title="This is the title of the movie"
         ></card-home>
       </v-col>
-    </v-row>
+    </v-row> -->
 
-    <v-row>
-      <carousel></carousel>
-      <carousel></carousel>
-      <carousel></carousel>
-      <carousel></carousel>
-      <carousel></carousel>
-    </v-row>
+
+
 
   </v-container>
 </template>
@@ -37,16 +55,19 @@ import CardHome from "~/components/CardHome";
 import CardBrowse from "~/components/CardBrowse";
 import Carousel from "~/components/Carousel";
 import MovieCard from "~/components/MovieCard";
+import MainCarousel from "~/components/MainCarousel";
 
 export default {
   components: {
     CardHome,
     CardBrowse,
     Carousel,
-    MovieCard
+    MovieCard,
+    MainCarousel
   },
   data() {
-    return {};
+    return {
+    };
   }
 };
 </script>
