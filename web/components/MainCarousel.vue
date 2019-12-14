@@ -1,13 +1,13 @@
 <template>
-  <div class="-container">
+  <div class="MainCarousel-container">
 
-    <div v-for="(movie, i) in movies" :key="movie" class="-movie">
-      <movie-card 
+    <div v-for="(movie, i) in movies" :key="i">
+      <MovieCard 
         :ratio="i === 1 ? 1.5 : 1.2"
         :movie="movie"
-      ></movie-card>
+      ></MovieCard>
     </div>
-    
+
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .-container {
+  .MainCarousel-container {
     display: flex;
     justify-content: space-around;
     align-items: center;

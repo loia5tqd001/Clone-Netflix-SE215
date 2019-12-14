@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
 
-    <main-carousel></main-carousel>
+    <MainCarousel></MainCarousel>
 
     <!-- <v-row>
      <v-carousel

@@ -1,25 +1,25 @@
 <template>
-  <div :style="cssVars" class="-container">
+  <div :style="cssVars" class="MovieCard-container">
 
-    <div class="-thumbnail">
+    <div class="MovieCard-thumbnail">
       <img :src="movie.imgUrl" alt="movie card">
     </div>
 
-    <div class="-overlay">
-      <play-button class="-play-button">
-      </play-button>
+    <div class="MovieCard-overlay">
+      <PlayButton class="MovieCard-play-button">
+      </PlayButton>
 
-      <div class="-movie-detail">
-        <h3 class="-movie-name">
+      <div class="MovieCard-movie-detail">
+        <h3 class="MovieCard-movie-name">
           {{ movie.name }}
         </h3>
   
-        <p class="-movie-info">
+        <p class="MovieCard-movie-info">
           <span>{{ movie.info[0] }}</span>
           <span>{{ movie.info[1] }}</span>
         </p>
   
-        <p class="-movie-category">
+        <p class="MovieCard-movie-category">
           <span v-for="category in movie.categories" :key="category">
             {{ category }}
           </span>
@@ -75,7 +75,7 @@ export default {
     margin: 0;
   }
 
-  .-container {
+  .MovieCard-container {
     position: relative;
     border-radius: 1rem;
     overflow: hidden;
@@ -91,7 +91,7 @@ export default {
     }
   }
 
-  .-thumbnail {
+  .MovieCard-thumbnail {
     width: 100%;
     height: 100%;
 
@@ -102,13 +102,13 @@ export default {
     }
   }
 
-  .-overlay {
+  .MovieCard-overlay {
     position: absolute;
     left:0; top:0; right:0; bottom:0;
     display: grid; 
     place-items: center;
 
-    .-movie-detail {
+    .MovieCard-movie-detail {
       color: $color--white-subtle;
       position: absolute;
 
@@ -116,7 +116,7 @@ export default {
       left: $size; bottom: $size;
       font-size: $size;
 
-      .-movie-info :first-child {
+      .MovieCard-movie-info :first-child {
         color: #0f0;
         font-weight: bold;
       }
@@ -125,29 +125,29 @@ export default {
 
   /* ---- Animation - Transition ---- */
 
-  .-overlay {
+  .MovieCard-overlay {
     background: linear-gradient(to top, #0008, #0000);
     transition: background-color $transition;
     &:hover {
       background: linear-gradient(to top, #000, #0000);
     }
 
-    .-play-button {
+    .MovieCard-play-button {
       opacity: 0;
       transform: scale(calc( .3 * var(--ratio) ));
       transition: transform $transition, opacity $transition;
     }
-    &:hover .-play-button {
+    &:hover .MovieCard-play-button {
       opacity: 1;
       transform: scale(var(--ratio));
     }
 
-    .-movie-detail {
+    .MovieCard-movie-detail {
       opacity: 0;
       transform: translateX(-2rem);
       transition: transform $transition, opacity $transition;
     }
-    &:hover .-movie-detail {
+    &:hover .MovieCard-movie-detail {
       opacity: 1;
       transform: translateX(0);
     }
