@@ -22,19 +22,19 @@ export default {
     return {
       movies: [
         {
-          imgUrl: '../thumbnail-horizontal/0.jpg',
+          imgUrl: '../thumbnail-horizontal/98.jpg',
           name: 'Romance Is a Bonus Book',
           info: ['98% Match', '1 Season'],
           categories: ['Sentimental', 'Romantic','Dramedy']
         },
         {
-          imgUrl: '../thumbnail-horizontal/1.jpg',
+          imgUrl: '../thumbnail-horizontal/99.jpg',
           name: 'Romance Is a Bonus Book',
           info: ['99% Match', '3h 35m'],
           categories: ['Sentimental', 'Romantic','Dramedy']
         },
         {
-          imgUrl: '../thumbnail-horizontal/2.jpg',
+          imgUrl: '../thumbnail-horizontal/97.jpg',
           name: 'Romance Is a Bonus Book',
           info: ['97% Match', '1 Season'],
           categories: ['Sentimental', 'Romantic','Dramedy']

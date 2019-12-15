@@ -2,10 +2,12 @@
   <div>
     <h3>{{ header }}</h3>
     <div class="RowCarousel-row">
-      <MovieCard class="RowCarousel-item"></MovieCard>
-      <MovieCard class="RowCarousel-item"></MovieCard>
-      <MovieCard class="RowCarousel-item"></MovieCard>
-      <MovieCard class="RowCarousel-item"></MovieCard>
+
+      <MovieCard v-for="movie in movies.slice(0, 4)" :key="movie.imgUrl"
+        class="RowCarousel-item"
+        :movie="movie"
+      ></MovieCard>
+
     </div>
   </div>
 </template>
@@ -18,6 +20,10 @@ export default {
     header: {
       type: String,
       default: 'Popular on Netflix',
+      required: true
+    },
+    movies: {
+      type: Array,
       required: true
     },
   },
