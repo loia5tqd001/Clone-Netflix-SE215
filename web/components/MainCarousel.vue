@@ -23,20 +23,20 @@ export default {
       movies: [
         {
           imgUrl: '../thumbnail-horizontal/98.jpg',
-          name: 'Romance Is a Bonus Book',
+          name: 'Everything Sucks',
           info: ['98% Match', '1 Season'],
-          categories: ['Sentimental', 'Romantic','Dramedy']
+          categories: ['Action', 'Teen','Dramedy']
         },
         {
           imgUrl: '../thumbnail-horizontal/99.jpg',
-          name: 'Romance Is a Bonus Book',
+          name: 'The Boss Baby',
           info: ['99% Match', '3h 35m'],
-          categories: ['Sentimental', 'Romantic','Dramedy']
+          categories: ['Children', 'Family','Catoon']
         },
         {
           imgUrl: '../thumbnail-horizontal/97.jpg',
-          name: 'Romance Is a Bonus Book',
-          info: ['97% Match', '1 Season'],
+          name: 'Insatiable',
+          info: ['97% Match', '2 Season'],
           categories: ['Sentimental', 'Romantic','Dramedy']
         },
       ]

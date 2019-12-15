@@ -1,5 +1,7 @@
 import _ from 'lodash'
 
+import scrappedMovies from './scrapped-movies.json'
+
 const getRandomCategories = () => {
   const categories = [
     'Sentimental',
@@ -40,209 +42,18 @@ const getRandomMovieInfo = ({ percentMatch = 96 } = {}) => {
 }
 
 const getCarousels = () => {
-  const headers = [
-    'Continue watching for Loi',
-    'Popular on Netflix',
-    'Trending Now',
-    'New Releases',
-    'Top Picks for Loi',
-    'Because you watched Vegabond',
-    'Netflix Originals',
-    'Comedies',
-  ]
-
-  return headers.map((header, i) => {
-    const movies = Array.from({ length: _.random(4, 10) }).map((_, j) => {
-      return {
-        imgUrl: `../thumbnail-horizontal/${i * 10 + j}.jpg`,
-        name: "Romance Is a Bonus Book",
-        info: getRandomMovieInfo({ percentMatch: 100 - (i*10+j) }),
-        categories: getRandomCategories()
-      }
-    })
+  return scrappedMovies.map((carousel, i) => {
 
     return {
-      header,
-      movies
+      header: carousel.header,
+      movies: carousel.movies.map((movie, j) => ({
+        imgUrl: movie.imgSrc,
+        name: movie.name,
+        info: getRandomMovieInfo({ percentMatch: 95 - (i + j) }),
+        categories: getRandomCategories()
+      }))
     }
   })
 }
 
 export const carousels = getCarousels()
-
-// export const carousels = [
-//   {
-//     header: "Continue watching for Loi",
-//     movies: [
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       }
-//     ]
-//   },
-//   {
-//     header: "Popular on Netflix",
-//     movies: [
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       }
-//     ]
-//   },
-//   {
-//     header: "Trending Now",
-//     movies: [
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       }
-//     ]
-//   },
-//   {
-//     header: "New Releases",
-//     movies: [
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       }
-//     ]
-//   },
-//   {
-//     header: "Top Picks for Loi",
-//     movies: [
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       }
-//     ]
-//   },
-//   {
-//     header: "Because you watched Vegabond",
-//     movies: [
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       },
-//       {
-//         imgUrl: "../thumbnail-horizontal/2.jpg",
-//         name: "Romance Is a Bonus Book",
-//         info: ["98% Match", "1 Season"],
-//         categories: ["Sentimental", "Romantic", "Dramedy"]
-//       }
-//     ]
-//   }
-// ];
