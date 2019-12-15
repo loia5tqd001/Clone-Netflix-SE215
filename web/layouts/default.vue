@@ -62,8 +62,12 @@
       <nuxt/>
     </v-content>
 
-    <v-footer>
-      <span>&copy; 2019</span>
+    <v-footer class="footer">
+      <span style="margin-right: auto">&copy; 2019</span>
+      <i class="social-icon fab fa-facebook-square"></i>
+      <i class="social-icon fab fa-instagram"></i>
+      <i class="social-icon fab fa-twitter"></i>
+      <i class="social-icon fab fa-youtube"></i>
     </v-footer>
   </v-app>
 </template>
@@ -86,8 +90,25 @@ export default {
   .app {
     font-family: 'Montserrat', sans-serif;
   }
+
   .avatar {
     border-radius: 10%;
     box-shadow: 0 4px 15px #0008;
+  }
+  
+  .footer {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+  }
+
+  .social-icon {
+    margin-right: 1rem;
+    display: inline-block;
+    justify-self: flex-end;
+  }
+  .social-icon:hover {
+    cursor: pointer;
   }
 </style>

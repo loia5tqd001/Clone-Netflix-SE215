@@ -3,7 +3,7 @@
 
     <div v-for="(movie, i) in movies" :key="i">
       <MovieCard 
-        :ratio="i === 1 ? 1.5 : 1.2"
+        :ratio="i === 1 ? 1.6 : 1.2"
         :movie="movie"
       ></MovieCard>
     </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import MovieCard from "./MovieCard";
+import MovieCard from "./MovieCard.vue";
 
 export default {
   components: {

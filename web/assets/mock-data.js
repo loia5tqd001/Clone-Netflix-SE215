@@ -57,3 +57,18 @@ const getCarousels = () => {
 }
 
 export const carousels = getCarousels()
+
+
+
+const getHistory = () => {
+  return Array.from({ length: 40 }).map((_, i) => {
+    return {
+      imgUrl: `../thumbnail-horizontal/${i}.jpg`,
+      name: 'Romance Is a Bonus Book',
+      info: getRandomMovieInfo(),
+      categories: getRandomCategories()
+    }
+  })
+};
+
+export const history = getHistory()
