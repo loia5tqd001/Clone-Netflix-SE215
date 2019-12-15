@@ -10,11 +10,9 @@
       </select>
     </div>
 
-    <div class="history-movie-grid">
-      <MovieCard v-for="movie in movies" :key="movie.name" 
-        :movie=movie
-      > </MovieCard>
-    </div>
+    <transition-group class="history-movie-grid" tag="div" name="fade" mode="out-in">
+      <MovieCard v-for="movie in movies" :key="movie.id" :movie=movie ></MovieCard>
+    </transition-group>
   </div>
 </template>
 
@@ -30,21 +28,27 @@ export default {
   data() {
     return {
       amount: 12,
-      selectedUnit: 'weeks'
-    }
-  },
-  computed: {
-    movies() {
-      return history
+      selectedUnit: 'weeks',
+      movies: this.getMovies()
     }
   },
   methods: {
+    getMovies() {
+      return history.map(movie => ({
+        id: movie.imgUrl + new Date(),
+        ...movie
+      }))
+    },
     reload: _.debounce(function() {
-      this.$router.go({
-          path: '/history',
-          force: true
-      })
-    }, 500)
+      this.movies = _.shuffle(this.getMovies())
+    }, 1000)
+  },
+  watch: {
+    amount(value) {
+      if (value > 1000) {
+        this.amount = 999
+      }
+    }
   }
 }
 </script>
@@ -91,6 +95,12 @@ export default {
         color: black;
       }
     }
+  }
 
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0;
   }
 </style>
