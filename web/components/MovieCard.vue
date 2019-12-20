@@ -20,7 +20,7 @@
         </p>
   
         <p class="MovieCard-movie-category">
-          <span v-for="category in movie.categories" :key="category">
+          <span v-for="(category, i) in movie.categories" :key="category+i+Math.random()">
             {{ category }}
           </span>
         </p>

@@ -22,6 +22,8 @@
         color="white"
         class="ml-12 mt-4"
         append-icon="mdi-magnify"
+        @blur="goBack"
+        v-model="searchText"
       ></v-text-field>
 
       <v-menu
@@ -81,6 +83,22 @@ export default {
   },
   data () {
     return {
+      searchText: ''
+    }
+  },
+  methods: {
+    goBack() {
+      if (!this.searchText && this.$route.name === 'search') {
+        this.$router.go(-1)
+      }
+    },
+  },
+  watch: {
+    searchText(newValue) {
+      if (newValue && this.$route.name !== 'search') {
+        this.$router.push('/search')
+      } 
+      this.$store.commit("setSearchText", newValue)
     }
   }
 }

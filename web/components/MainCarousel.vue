@@ -25,7 +25,7 @@ export default {
           imgUrl: '../thumbnail-horizontal/98.jpg',
           name: 'Everything Sucks',
           info: ['98% Match', '1 Season'],
-          categories: ['Action', 'Teen','Dramedy']
+          categories: ['Action', 'Teen','Drama']
         },
         {
           imgUrl: '../thumbnail-horizontal/99.jpg',

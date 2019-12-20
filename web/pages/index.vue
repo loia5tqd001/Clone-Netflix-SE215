@@ -12,11 +12,6 @@
       </RowCarousel>
     </v-container>
 
-
-
-
-
-
   </v-container>
 </template>
 
