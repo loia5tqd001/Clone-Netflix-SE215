@@ -47,7 +47,7 @@ export default {
   .ReviewCard-container {
     display: flex;
     flex-direction: column;
-    max-width: 650px;
+    max-width: 700px;
   }
 
   .ReviewCard-user {
@@ -85,10 +85,16 @@ export default {
     }
   }
 
+  .ReviewCard-caption p {
+    word-break: break-all;
+    margin: .5rem 0;
+  }
+
   .ReviewCard-movie-card-container {
     width: 100%;
 
     .ReviewCard-movie-card {
+      margin: 1rem 0;
       width: 100%; 
       height: 100%;
     }

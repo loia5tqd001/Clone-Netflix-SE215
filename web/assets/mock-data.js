@@ -72,3 +72,21 @@ const getHistory = () => {
 };
 
 export const history = getHistory()
+
+
+
+const getWatchingCarousel = () => {
+  return {
+    header: "Related to THE BOSS BABY",
+    movies: Array.from({ length: 4 }).map((_, i) => {
+      return {
+        imgUrl: `../thumbnail-horizontal/${i}.jpg`,
+        name: "The Boss Baby",
+        info: getRandomMovieInfo(),
+        categories: getRandomCategories()
+      };
+    })
+  };
+};
+
+export const watchingCarousel = getWatchingCarousel();

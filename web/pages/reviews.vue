@@ -12,7 +12,7 @@
     </div>
 
     <div class="reviews-new-trailers">
-      <h2>New Trailers</h2>
+      <h2 class="--title">New Trailers</h2>
 
       <ul class="reviews-list-trailers">
         <li v-for="trailer in trailers" :key="trailer.id">
@@ -77,6 +77,10 @@ export default {
 
   .reviews-new-trailers {
     margin: 0 5rem;
+
+    .--title {
+      margin: 0 auto 1rem;
+    }
 
     .reviews-list-trailers {
       list-style: none;
