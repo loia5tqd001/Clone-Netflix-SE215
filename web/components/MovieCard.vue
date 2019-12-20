@@ -83,10 +83,10 @@ export default {
     height: calc(12rem * var(--ratio)) !important;
 
     transition: box-shadow $transition, transform $transition;
-    box-shadow: 0 4px 10px #100a;
+    box-shadow: 0 4px 5px #100a;
 
     &:hover {
-      box-shadow: 0 4px 25px #100d;
+      box-shadow: 0 4px 15px #100d;
       transform: scale(1.05);
     }
   }
