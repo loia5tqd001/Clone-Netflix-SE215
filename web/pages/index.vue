@@ -16,10 +16,6 @@
 </template>
 
 <script>
-import CardHome from '@/components/CardHome.vue';
-import CardBrowse from '@/components/CardBrowse.vue';
-import Carousel from '@/components/Carousel.vue';
-import MovieCard from '@/components/MovieCard.vue';
 import MainCarousel from '@/components/MainCarousel.vue';
 import RowCarousel from '@/components/RowCarousel.vue';
 
@@ -27,10 +23,6 @@ import { carousels } from '@/assets/mock-data'
 
 export default {
   components: {
-    CardHome,
-    CardBrowse,
-    Carousel,
-    MovieCard,
     MainCarousel,
     RowCarousel
   },
