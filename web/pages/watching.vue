@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="main">
 
-    <MainCarousel class="main-carousel"></MainCarousel>
+    <WatchingDetail class="watching-detail"></WatchingDetail>
 
     <v-container fluid>
       <RowCarousel 
@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import MainCarousel from '@/components/MainCarousel.vue';
+import WatchingDetail from '@/components/WatchingDetail.vue';
 import RowCarousel from '@/components/RowCarousel.vue';
 
 import { watchingCarousel } from '@/assets/mock-data'
 
 export default {
   components: {
-    MainCarousel,
+    WatchingDetail,
     RowCarousel
   },
   data() {
@@ -47,11 +47,12 @@ export default {
       background: linear-gradient(to bottom #000c, #000a, #0000);
     }
   }
-  
-  .main-carousel {
-    margin: 0;
-    padding: 3rem 0 6rem;
+
+  .watching-detail {
+    height: 90vh;
   }
+  
+  
 
   .row-carousel {
     margin: 0 auto 2rem;
