@@ -38,7 +38,7 @@
             color="white"
             size="44"
             class="mx-8"
-          ><img class="avatar" src="https://i.pravatar.cc/100">
+          ><img class="avatar" src="https://i.pravatar.cc/30">
           </v-avatar>
         </template>
         <v-list>

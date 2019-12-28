@@ -27,11 +27,11 @@ export default {
   data() {
     return {
       avatars: [
-        { src: "https://i.pravatar.cc/300", name: "Loi" },
-        { src: "https://i.pravatar.cc/301", name: "LaLa" },
-        { src: "https://i.pravatar.cc/302", name: "Kids" },
-        { src: "https://i.pravatar.cc/303", name: "David" },
-        { src: "https://i.pravatar.cc/304", name: "Maria" }
+        { src: "https://i.pravatar.cc/150", name: "Loi" },
+        { src: "https://i.pravatar.cc/151", name: "LaLa" },
+        { src: "https://i.pravatar.cc/152", name: "Kids" },
+        { src: "https://i.pravatar.cc/153", name: "David" },
+        { src: "https://i.pravatar.cc/154", name: "Maria" }
       ]
     };
   },
