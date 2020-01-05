@@ -19,7 +19,7 @@
 import MainCarousel from '@/components/MainCarousel.vue';
 import RowCarousel from '@/components/RowCarousel.vue';
 
-import { carousels } from '@/assets/mock-data'
+import moviesHome from '@/assets/mock_data/getMoviesHome'
 
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      carousels: carousels
+      carousels: moviesHome
     };
   }
 };

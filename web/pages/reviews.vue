@@ -27,7 +27,7 @@
 <script>
 import MovieCard from '@/components/MovieCard.vue';
 import ReviewCard from '@/components/ReviewCard.vue';
-import { history } from '@/assets/mock-data';
+import moviesHistory from '@/assets/mock_data/getMoviesHistory';
 
 export default {
   components: {
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     getMovies() {
-      return history.map(movie => ({
+      return moviesHistory.map(movie => ({
         id: movie.imgUrl + new Date(),
         ...movie
       })).slice(0, 10)

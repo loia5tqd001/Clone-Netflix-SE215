@@ -1,10 +1,8 @@
 <template>
   <v-container fluid class="main">
 
-    <WatchingDetail class="watching-detail"></WatchingDetail>
-
     <v-container fluid>
-      <RowCarousel 
+      <RowCarousel v-for="carousel in carousels" :key="carousel.header"
         class="row-carousel"
         :header="carousel.header"
         :movies="carousel.movies"
@@ -12,24 +10,21 @@
       </RowCarousel>
     </v-container>
 
-
   </v-container>
 </template>
 
 <script>
-import WatchingDetail from '@/components/WatchingDetail.vue';
 import RowCarousel from '@/components/RowCarousel.vue';
 
-import moviesRelatedWatching from '@/assets/mock_data/getMoviesRelatedWatching'
+import moviesRecentlyAdded from '@/assets/mock_data/getMoviesRecentlyAdded'
 
 export default {
   components: {
-    WatchingDetail,
     RowCarousel
   },
   data() {
     return {
-      carousel: moviesRelatedWatching
+      carousels: moviesRecentlyAdded
     };
   }
 };
@@ -48,11 +43,6 @@ export default {
     }
   }
 
-  .watching-detail {
-    height: 90vh;
-  }
-  
-  
 
   .row-carousel {
     margin: 0 auto 2rem;

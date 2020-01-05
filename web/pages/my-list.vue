@@ -1,24 +1,16 @@
 <template>
   <div light class="history-container">
-    <div class="filter">
-      <span>For</span>
-      <input type="number" v-model="amount" class="amount" @input="reload">
-      <select v-model="selectedUnit" class="unit" @change="reload">
-        <option value="days">Days</option>
-        <option value="weeks">Weeks</option>
-        <option value="months">Months</option>
-      </select>
-    </div>
 
     <transition-group class="history-movie-grid" tag="div" name="fade" mode="out-in">
       <MovieCard v-for="movie in movies" :key="movie.id" :movie=movie :ratio="0.8" ></MovieCard>
     </transition-group>
+    
   </div>
 </template>
 
 <script>
 import MovieCard from '@/components/MovieCard.vue';
-import moviesHistory from '@/assets/mock_data/getMoviesHistory'
+import moviesHistory from '@/assets/mock_data/getMoviesHistory';
 import _ from 'lodash'
 
 export default {

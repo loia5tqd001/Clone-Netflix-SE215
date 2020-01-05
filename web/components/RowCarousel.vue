@@ -3,9 +3,10 @@
     <h3>{{ header }}</h3>
     <div class="RowCarousel-row">
 
-      <MovieCard v-for="movie in movies.slice(0, 4)" :key="movie.imgUrl"
+      <MovieCard v-for="movie in movies.slice(0, 5)" :key="movie.imgUrl"
         class="RowCarousel-item"
         :movie="movie"
+        :ratio="0.8"
       ></MovieCard>
 
     </div>

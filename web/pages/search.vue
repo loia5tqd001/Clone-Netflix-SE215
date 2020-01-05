@@ -1,6 +1,6 @@
 <template>
   <div light class="search-container">
-    <p>All related to: <strong>{{ searchText }}</strong></p>
+    <p>All movies, categories, tv shows related to: <strong>{{ searchText }}</strong></p>
     <transition-group class="search-movie-grid" tag="div" name="fade" mode="out-in">
       <MovieCard v-for="movie in movies" :key="movie.id" :movie=movie ></MovieCard>
     </transition-group>
@@ -9,7 +9,7 @@
 
 <script>
 import MovieCard from '@/components/MovieCard.vue';
-import { history } from '@/assets/mock-data';
+import moviesHistory from '@/assets/mock_data/getMoviesHistory';
 import _ from 'lodash'
 
 export default {
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     getMovies() {
-      return history.map(movie => ({
+      return moviesHistory.map(movie => ({
         id: movie.imgUrl + new Date(),
         ...movie
       }))
