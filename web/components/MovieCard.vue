@@ -68,6 +68,10 @@
 </template>
 
 <script>
+import { random } from 'lodash'
+import getRandomMovieName from '@/assets/helpers/getRandomMovieName'
+import getRandomCategories from '@/assets/helpers/getRandomCategories'
+import getRandomMovieInfo from '@/assets/helpers/getRandomMovieInfo'
 import PlayButton from "./PlayButton";
 
 export default {
@@ -80,10 +84,10 @@ export default {
       required: true,
       default() {
         return {
-          imgUrl: "../thumbnail-horizontal/2.jpg",
-          name: "Romance Is a Bonus Book",
-          info: ["98% Match", "1 Season"],
-          categories: ["Sentimental", "Romantic", "Dramedy"]
+          imgUrl: `../thumbnail-horizontal/${random(100)}.jpg`,
+          name: getRandomMovieName(),
+          info: getRandomMovieInfo(),
+          categories: getRandomCategories()
         };
       }
     }
