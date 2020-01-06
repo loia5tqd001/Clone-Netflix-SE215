@@ -1,7 +1,5 @@
 <template>
-  <nuxt-link
-    to="/watching"
-    tag="div"
+  <div
     :style="cssVars"
     class="MovieCard-container"
   >
@@ -10,7 +8,41 @@
     </div>
 
     <div class="MovieCard-overlay">
-      <PlayButton class="MovieCard-play-button"> </PlayButton>
+      <nuxt-link to="/watching" tag="div" class="MovieCard-play-button">
+        <PlayButton> </PlayButton>
+      </nuxt-link>
+
+      <div class="MovieCard-buttons-container">
+        <button 
+          class="button-action"
+          :class="{ 'toggle-on': isLiked }" 
+          @click.stop="onLike"
+          :title="isLiked ? 'you liked' : 'like'"
+        >
+          <v-icon v-if="isLiked">mdi-thumb-up</v-icon>
+          <v-icon v-else>mdi-thumb-up-outline</v-icon>
+        </button>
+
+        <button 
+          class="button-action" 
+          :class="{ 'toggle-on': isDisliked }" 
+          @click.stop="onDislike"
+          :title="isDisliked ? 'you disliked' : 'dislike'"
+        >
+          <v-icon v-if="isDisliked">mdi-thumb-down</v-icon>
+          <v-icon v-else>mdi-thumb-down-outline</v-icon>
+        </button>
+
+        <button 
+          class="button-action" 
+          :class="{ 'toggle-on': isAdded }" 
+          @click.stop="onAdd"
+          :title="isAdded ? 'already on your list' : 'add to my list'"
+        >
+          <v-icon v-if="isAdded">mdi-plus</v-icon>
+          <v-icon v-else>mdi-plus</v-icon>
+        </button>
+      </div>
 
       <div class="MovieCard-movie-detail">
         <h3 class="MovieCard-movie-name">
@@ -32,7 +64,7 @@
         </p>
       </div>
     </div>
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
@@ -56,8 +88,38 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      isLiked: false,
+      isDisliked: false,
+      isAdded: false
+    }
+  },
   components: {
     PlayButton
+  },
+  methods: {
+    onLike(e) {
+      this.isLiked = !this.isLiked
+    },
+    onDislike(e) {
+      this.isDisliked = !this.isDisliked
+    },
+    onAdd(e) {
+      this.isAdded = !this.isAdded
+    }
+  },
+  watch: {
+    isLiked(newVal) {
+      if (newVal === true && this.isDisliked) {
+        this.isDisliked = false
+      }
+    },
+    isDisliked(newVal) {
+      if (newVal === true && this.isLiked) {
+        this.isLiked = false
+      }
+    }
   },
   computed: {
     // https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
@@ -72,6 +134,11 @@ export default {
 
 <style lang="scss" scoped>
 $transition: 0.2s ease-in;
+$micro-transition: 0.1s;
+
+@function proportion($value) {
+  @return calc( #{$value} * var(--ratio) );
+}
 
 /* ---- Static State ---- */
 
@@ -85,8 +152,8 @@ p {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
-  width: calc(21rem * var(--ratio)) !important;
-  height: calc(12rem * var(--ratio)) !important;
+  width: proportion(21em) !important;
+  height: proportion(12em) !important;
 
   transition: box-shadow $transition, transform $transition;
   box-shadow: 0 4px 5px #100a;
@@ -94,7 +161,6 @@ p {
   &:hover {
     box-shadow: 0 4px 15px #100d;
     transform: scale(1.05);
-    cursor: pointer;
   }
 }
 
@@ -118,11 +184,70 @@ p {
   display: grid;
   place-items: center;
 
+  .MovieCard-play-button {
+    cursor: pointer;
+    
+    > * {
+      transition: transform $micro-transition;
+    }
+    &:hover > * {
+      transform: scale(1.1);
+    }
+    &:active > * {
+      transform: scale(1.2);
+    }
+  }
+
+  .MovieCard-buttons-container {
+    $button-size: proportion(1.8em);
+
+    position: absolute;
+    right: proportion(1em);
+    width: $button-size;
+    height: proportion(6em);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .button-action {
+      width: $button-size;
+      height: $button-size;
+      border-radius: 50%;
+      border: proportion(1px) solid #eee;
+      background: #0006;
+      padding: proportion(.3em);
+      display: grid;
+      place-content: center;
+      transition: $micro-transition;
+      outline: none;
+
+      &.toggle-on {
+        background: #fffa;
+
+        > * {
+          text-shadow: 1px 1px #0003, -1px -1px #fff3;
+        }
+      }
+
+      &:hover {
+        border: proportion(2px) solid white;
+        transform: scale(1.2);
+      }
+      &:active {
+        transform: scale(1.1);
+      }
+
+      > * {
+        font-size: proportion(1.2rem);
+      }
+    }
+  }
+
   .MovieCard-movie-detail {
     color: $color--white-subtle;
     position: absolute;
 
-    $size: calc(0.8rem * var(--ratio));
+    $size: proportion(.8em);
     left: $size;
     bottom: $size;
     font-size: $size;
@@ -176,12 +301,22 @@ p {
 
   .MovieCard-play-button {
     opacity: 0;
-    transform: scale(calc(0.3 * var(--ratio)));
+    transform: scale(proportion(0.3));
     transition: transform $transition, opacity $transition;
   }
   &:hover .MovieCard-play-button {
     opacity: 1;
-    transform: scale(var(--ratio));
+    transform: scale(proportion(1));
+  }
+
+  .MovieCard-buttons-container {
+    opacity: 0;
+    transform: translateX(proportion(2em));
+    transition: transform $transition, opacity $transition;
+  }
+  &:hover .MovieCard-buttons-container {
+    opacity: 1;
+    transform: translateX(0);
   }
 
   .MovieCard-movie-detail {
