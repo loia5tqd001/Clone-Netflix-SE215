@@ -7,6 +7,7 @@
         <ReviewCard class="reviews-review-card"></ReviewCard>
         <ReviewCard class="reviews-review-card"></ReviewCard>
         <ReviewCard class="reviews-review-card"></ReviewCard>
+        <ReviewCard class="reviews-review-card"></ReviewCard>
       </div>
 
     </div>
@@ -71,7 +72,7 @@ export default {
     }
 
     .reviews-review-card {
-      margin: 0 auto 5rem;
+      margin: 0 auto 2rem;
     }
   }
 
