@@ -38,7 +38,7 @@
             color="white"
             size="44"
             class="mx-8"
-          ><img class="avatar" src="avatars/avatar-2.jpeg">
+          ><img class="avatar" :src="'../avatars/avatar-2.jpeg'">
           </v-avatar>
         </template>
         <v-list>

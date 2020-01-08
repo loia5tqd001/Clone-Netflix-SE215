@@ -1,7 +1,7 @@
 <template>
   <div class="ReviewCard-container">
     <div class="ReviewCard-user">
-      <img class="ReviewCard-user__avatar" :src="`avatars/avatar-${random(9)}.jpeg`" alt="avatar">
+      <img class="ReviewCard-user__avatar" :src="`../avatars/avatar-${random(9)}.jpeg`" alt="avatar">
 
       <div class="ReviewCard-user__info">
         <p class="--name"><span>Lisa</span> reviews on</p>

@@ -28,11 +28,11 @@ export default {
   data() {
     return {
       avatars: [
-        { src: "avatars/avatar-1.jpeg", fallback: "https://i.pravatar.cc/200", name: "Loi" },
-        { src: "avatars/avatar-2.jpeg", fallback: "https://i.pravatar.cc/201", name: "LaLa" },
-        { src: "avatars/avatar-3.jpeg", fallback: "https://i.pravatar.cc/202", name: "Kids" },
-        { src: "avatars/avatar-4.jpeg", fallback: "https://i.pravatar.cc/203", name: "David" },
-        { src: "avatars/avatar-5.jpeg", fallback: "https://i.pravatar.cc/204", name: "Maria" }
+        { src: "../avatars/avatar-1.jpeg", fallback: "https://i.pravatar.cc/200", name: "Loi" },
+        { src: "../avatars/avatar-2.jpeg", fallback: "https://i.pravatar.cc/201", name: "LaLa" },
+        { src: "../avatars/avatar-3.jpeg", fallback: "https://i.pravatar.cc/202", name: "Kids" },
+        { src: "../avatars/avatar-4.jpeg", fallback: "https://i.pravatar.cc/203", name: "David" },
+        { src: "../avatars/avatar-5.jpeg", fallback: "https://i.pravatar.cc/204", name: "Maria" }
       ]
     };
   },
@@ -68,7 +68,7 @@ export default {
     transition: border .2s;
     border: 2px solid white;
   }
-  .v-image.img  .v-image__image.v-image__image--preload {
+  .img > *{
     filter: blur(0) !important;
   }
 </style>
