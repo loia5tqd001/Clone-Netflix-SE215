@@ -229,7 +229,7 @@ p {
       padding: .3em;
       display: grid;
       place-content: center;
-      transition: $micro-transition;
+      transition: transform .2s, border .1s;
       outline: none;
 
       &.toggle-on {

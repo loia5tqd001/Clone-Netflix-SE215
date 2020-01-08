@@ -5,12 +5,13 @@
     <v-row>
       <v-col v-for="(avatar, i) in avatars" :key="i" class="avatar-wrapper">
         <nuxt-link tag="div" class="avatar" to="/">
-          <img
+          <v-img
             class="img"
             :src="avatar.src"
+            :lazy-src="avatar.fallback"
             :height="responsiveSize.avatar"
             :width="responsiveSize.avatar"
-          >
+          ></v-img>
           <h1 class="mt-2 text-center" :class="responsiveSize.font">
             {{ avatar.name }}
           </h1>
@@ -27,11 +28,11 @@ export default {
   data() {
     return {
       avatars: [
-        { src: "avatars/avatar-1.jpeg", name: "Loi" },
-        { src: "avatars/avatar-2.jpeg", name: "LaLa" },
-        { src: "avatars/avatar-3.jpeg", name: "Kids" },
-        { src: "avatars/avatar-4.jpeg", name: "David" },
-        { src: "avatars/avatar-5.jpeg", name: "Maria" }
+        { src: "avatars/avatar-1.jpeg", fallback: "https://i.pravatar.cc/200", name: "Loi" },
+        { src: "avatars/avatar-2.jpeg", fallback: "https://i.pravatar.cc/201", name: "LaLa" },
+        { src: "avatars/avatar-3.jpeg", fallback: "https://i.pravatar.cc/202", name: "Kids" },
+        { src: "avatars/avatar-4.jpeg", fallback: "https://i.pravatar.cc/203", name: "David" },
+        { src: "avatars/avatar-5.jpeg", fallback: "https://i.pravatar.cc/204", name: "Maria" }
       ]
     };
   },
@@ -66,5 +67,8 @@ export default {
   .avatar:hover .img {
     transition: border .2s;
     border: 2px solid white;
+  }
+  .v-image.img  .v-image__image.v-image__image--preload {
+    filter: blur(0) !important;
   }
 </style>
