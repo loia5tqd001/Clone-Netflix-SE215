@@ -5,12 +5,12 @@
     <v-row>
       <v-col v-for="(avatar, i) in avatars" :key="i" class="avatar-wrapper">
         <nuxt-link tag="div" class="avatar" to="/">
-          <v-img
+          <img
             class="img"
             :src="avatar.src"
             :height="responsiveSize.avatar"
             :width="responsiveSize.avatar"
-          ></v-img>
+          >
           <h1 class="mt-2 text-center" :class="responsiveSize.font">
             {{ avatar.name }}
           </h1>
