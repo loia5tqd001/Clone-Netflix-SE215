@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "log-to-file": "^2.0.2",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-carousel-3d": "^0.2.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"

@@ -79,6 +79,10 @@ export default {
     ratio: {
       default: 1
     },
+    anotherTransform: {
+      type: String,
+      default: 'translateY(0)',
+    },
     movie: {
       type: Object,
       required: true,
@@ -129,7 +133,8 @@ export default {
     // https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
     cssVars() {
       return {
-        "--ratio": this.ratio
+        "--ratio": this.ratio,
+        "--another-transform": this.anotherTransform
       };
     }
   }
@@ -158,13 +163,15 @@ p {
   overflow: hidden;
   width: proportion(21em) !important;
   height: proportion(12em) !important;
+  transform: var(--another-transform);
 
   transition: box-shadow $transition, transform $transition;
   box-shadow: 0 4px 5px #100a;
 
+
   &:hover {
     box-shadow: 0 4px 15px #100d;
-    transform: scale(1.05);
+    transform: var(--another-transform) scale(1.05);
   }
 }
 
