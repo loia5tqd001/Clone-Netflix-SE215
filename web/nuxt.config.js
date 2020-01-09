@@ -50,6 +50,9 @@ export default {
     {
       src: "~/plugins",
       ssr: false
+    },
+    {
+      src: "~/plugins/vuetify.js",
     }
   ],
   /*

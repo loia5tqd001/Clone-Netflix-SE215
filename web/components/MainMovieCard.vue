@@ -122,10 +122,29 @@ export default {
       if (newVal === true && this.isDisliked) {
         this.isDisliked = false
       }
+
+      if (newVal) {
+        this.$toast(`liked "${this.movie.name}"`)
+      } else {
+        this.$toast(`unliked "${this.movie.name}"`)
+      }
     },
     isDisliked(newVal) {
       if (newVal === true && this.isLiked) {
         this.isLiked = false
+      }
+
+      if (newVal) {
+        this.$toast(`disliked "${this.movie.name}"`)
+      } else {
+        this.$toast(`undisliked "${this.movie.name}"`)
+      }
+    },
+    isAdded(newVal) {
+      if (newVal) {
+        this.$toast(`added "${this.movie.name}"`)
+      } else {
+        this.$toast(`removed "${this.movie.name}"`)
       }
     }
   },
