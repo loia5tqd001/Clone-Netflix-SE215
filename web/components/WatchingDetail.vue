@@ -5,7 +5,9 @@
       <div class="WatchingDetail-thumbnail__img">
         <img src="@/static/watching-thumbnail.jpg" alt="">
       </div>
-      <PlayButton class="WatchingDetail-play-button"></PlayButton>
+      <nuxt-link to="/video-watching">  
+        <PlayButton class="WatchingDetail-play-button"></PlayButton>
+      </nuxt-link>
     </div>
 
     <div class="WatchingDetail-details">
