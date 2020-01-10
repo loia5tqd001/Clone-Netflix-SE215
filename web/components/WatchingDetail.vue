@@ -33,9 +33,10 @@
       </div>
 
       <div class="WatchingDetail-action-bar">
-        <nuxt-link to="/recently-added" class="button --add">
-          <v-icon title="add to list">mdi-plus</v-icon>
-        </nuxt-link>
+        <button @click="onAddClick" class="button --add">
+          <v-icon v-if="isAdded" title="add to list">mdi-minus</v-icon>
+          <v-icon v-else title="add to list">mdi-plus</v-icon>
+        </button>
 
         <nuxt-link to="/share" class="button --share">
           <v-icon title="share">mdi-share-variant</v-icon>
@@ -74,11 +75,31 @@
 <script>
   import PlayButton from './PlayButton'
 
-  export default {
-    components: {
-      PlayButton,
-    },  
+export default {
+  components: {
+    PlayButton,
+  },  
+  data() {
+    return {
+      isAdded: false
+    }
+  },
+  methods: {
+    onAddClick() {
+      this.isAdded = !this.isAdded
+    }
+  },
+  watch: {
+    isAdded(newVal) {
+      if (newVal) {
+        this.$toast('Added THE NUCRAKER AND THE FOUR REALMS from your list')
+      } else {
+        this.$toast('Removed THE NUCRAKER AND THE FOUR REALMS from your list')
+      }
+    }
   }
+  
+}
 </script>
 
 <style lang="scss" scoped>
@@ -180,6 +201,7 @@
         display: inline-block;
         margin: 0 .3rem;
         transition: transform .2s;
+        outline: none;
 
         
         &:hover {

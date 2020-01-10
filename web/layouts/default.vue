@@ -13,8 +13,8 @@
       <my-link to="/">Home</my-link>
       <my-link to="/history">History</my-link>
       <my-link to="/my-list">My List</my-link>
-      <my-link to="/recently-added">Recently Added</my-link>
-      <my-link to="/reviews">Reviews</my-link>
+      <my-link to="/recently-added">Netflix Latest</my-link>
+      <my-link to="/reviews">Connect</my-link>
       <v-spacer></v-spacer>
 
       <v-text-field 

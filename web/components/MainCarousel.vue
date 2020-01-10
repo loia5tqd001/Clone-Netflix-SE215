@@ -109,7 +109,7 @@ export default {
       text-align: center;
       text-transform: uppercase;
       margin: -.5em 1em 1em .5em;
-      color: #C93D27;
+      color: #D93D27;
       text-shadow: 1px 1px 2px #000, -1px -1px 2px #fff3;
       transition: .2s;
 
