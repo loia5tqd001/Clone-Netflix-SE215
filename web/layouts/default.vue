@@ -1,6 +1,6 @@
 <template>
   <v-app class="app" dark>
-    <v-app-bar app>
+    <v-app-bar class="app-bar" app>
       <nuxt-link to="/">
         <v-img
           class="mx-8 my-4"
@@ -107,6 +107,11 @@ export default {
 <style scoped>
   .app {
     font-family: 'Montserrat', sans-serif;
+    background: #0b0a0a;
+  }
+
+  .app-bar {
+    background: #1c1b1b;
   }
 
   .avatar {

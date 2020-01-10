@@ -1,6 +1,9 @@
 <template>
   <div class="MainCarousel-container">
 
+  <h1 class="main-title">Top pick for you ✔</h1>
+
+
   <client-only placeholder="Loading...">
     <carousel-3d 
       :perspective="0" 
@@ -25,6 +28,7 @@
       </slide>
     </carousel-3d>
   </client-only>
+
 
   </div>
 </template>
@@ -96,10 +100,24 @@ export default {
 <style lang="scss" scoped>
   .MainCarousel-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
+
+    .main-title {
+      text-align: center;
+      text-transform: uppercase;
+      margin: -.5em 1em 1em .5em;
+      color: #C93D27;
+      text-shadow: 1px 1px 2px #000, -1px -1px 2px #fff3;
+      transition: .2s;
+
+      &:hover {
+        text-shadow: 2px 2px 4px #000, -2px -2px 4px #fff3;
+        transform: translate(.5px, .5px);
+      }
+    }
   } 
 
   
