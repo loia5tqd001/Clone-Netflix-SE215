@@ -1,6 +1,10 @@
 <template>
   <div class="share-container">
 
+    <v-btn class="share-back-btn" @click="$router.go(-1)" fab dark small>
+      <v-icon dark>mdi-arrow-left</v-icon>
+    </v-btn>
+
     <h3 class="share-main-title">review on</h3>
     <h2 class="share-movie-name">THE NUTCRACKER AND THE FOUR REALMS</h2>
     
@@ -43,6 +47,13 @@ export default {
     place-content: center;
     background: #1c1b1b;
     height: 100%;
+    position: relative;
+  }
+
+  .share-back-btn {
+    position: absolute;
+    top: 10%;
+    left: 10%;
   }
 
   .share-main-title {

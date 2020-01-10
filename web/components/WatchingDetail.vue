@@ -34,12 +34,12 @@
 
       <div class="WatchingDetail-action-bar">
         <button @click="onAddClick" class="button --add">
-          <v-icon v-if="isAdded" title="add to list">mdi-minus</v-icon>
+          <v-icon v-if="isAdded" title="remove from list">mdi-minus</v-icon>
           <v-icon v-else title="add to list">mdi-plus</v-icon>
         </button>
 
         <nuxt-link to="/share" class="button --share">
-          <v-icon title="share">mdi-share-variant</v-icon>
+          <v-icon title="share review">mdi-share-variant</v-icon>
         </nuxt-link>
 
         <nuxt-link to="/reviews" class="button --reviews">
