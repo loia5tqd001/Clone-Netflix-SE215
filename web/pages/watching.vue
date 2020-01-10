@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     goToReview() {
-      this.$refs.reviews.scrollIntoView()
+      this.$refs.reviews.scrollIntoView({ behavior: 'smooth' })
     }
   }
 };

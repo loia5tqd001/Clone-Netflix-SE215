@@ -1,7 +1,7 @@
 <template>
   <div class="MainCarousel-container">
 
-  <h1 class="main-title">Top pick for you ✔</h1>
+  <h1 class="main-title">Top picks for Loi ✔</h1>
 
 
   <client-only placeholder="Loading...">

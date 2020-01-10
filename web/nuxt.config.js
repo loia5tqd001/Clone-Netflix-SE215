@@ -53,6 +53,7 @@ export default {
     },
     {
       src: "~/plugins/vuetify.js",
+      ssr: false
     }
   ],
   /*

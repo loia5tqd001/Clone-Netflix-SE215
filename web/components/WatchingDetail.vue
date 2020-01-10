@@ -108,13 +108,6 @@ export default {
 }
 </script>
 
-
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
-
 <style lang="scss" scoped>
   .WatchingDetail-container {
     display: grid;
