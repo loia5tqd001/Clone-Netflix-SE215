@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
   .ReviewOnMovie-container {
-    display: flex;
+    display: inline-flex;
     height: 10em;
     width: 30em;
     border-radius: .3em;

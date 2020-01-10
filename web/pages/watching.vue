@@ -1,9 +1,16 @@
 <template>
   <v-container fluid class="main">
 
-    <WatchingDetail class="watching-detail"></WatchingDetail>
+    <WatchingDetail @goToReview="goToReview" class="watching-detail"></WatchingDetail>
 
-    <ReviewOnMovie></ReviewOnMovie>
+      <div id="reviews" ref="reviews">
+        <h3>Featured Reviews</h3>
+        <div class="reviews">
+          <ReviewOnMovie></ReviewOnMovie>
+          <ReviewOnMovie></ReviewOnMovie>
+          <ReviewOnMovie></ReviewOnMovie>
+        </div>
+      </div>
 
     <v-container fluid>
       <RowCarousel 
@@ -36,6 +43,11 @@ export default {
     return {
       carousel: moviesRelatedWatching
     };
+  },
+  methods: {
+    goToReview() {
+      this.$refs.reviews.scrollIntoView()
+    }
   }
 };
 </script>
@@ -56,8 +68,22 @@ export default {
   .watching-detail {
     height: 90vh;
   }
+
+  #reviews {
+    margin-top: 3em;
+    h3 {
+      margin-left: .5em;
+    }
+  }
   
-  
+  .reviews {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    > * {
+      flex: 0 0 32%;
+    }
+  }
 
   .row-carousel {
     margin: 0 auto 2rem;

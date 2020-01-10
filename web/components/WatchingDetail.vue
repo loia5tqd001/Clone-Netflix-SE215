@@ -42,9 +42,10 @@
           <v-icon title="share review">mdi-share-variant</v-icon>
         </nuxt-link>
 
-        <nuxt-link to="/reviews" class="button --reviews">
+        <button class="button --reviews" @click.prevent="$emit('goToReview')">
           <span title="watch reviews">Reviews</span>
-        </nuxt-link>
+        </button>
+
       </div>
 
       <div class="WatchingDetail-screenshots">
@@ -87,7 +88,7 @@ export default {
   methods: {
     onAddClick() {
       this.isAdded = !this.isAdded
-    }
+    },
   },
   watch: {
     isAdded(newVal) {
@@ -101,6 +102,13 @@ export default {
   
 }
 </script>
+
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
 
 <style lang="scss" scoped>
   .WatchingDetail-container {
