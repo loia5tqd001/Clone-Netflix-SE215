@@ -3,6 +3,8 @@
 
     <WatchingDetail class="watching-detail"></WatchingDetail>
 
+    <ReviewOnMovie></ReviewOnMovie>
+
     <v-container fluid>
       <RowCarousel 
         class="row-carousel"
@@ -19,13 +21,16 @@
 <script>
 import WatchingDetail from '@/components/WatchingDetail.vue';
 import RowCarousel from '@/components/RowCarousel.vue';
+import ReviewOnMovie from '@/components/ReviewOnMovie.vue';
+
 
 import moviesRelatedWatching from '@/assets/mock_data/getMoviesRelatedWatching'
 
 export default {
   components: {
     WatchingDetail,
-    RowCarousel
+    RowCarousel,
+    ReviewOnMovie
   },
   data() {
     return {
