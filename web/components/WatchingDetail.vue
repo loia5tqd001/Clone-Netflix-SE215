@@ -20,7 +20,7 @@
         Adventure, Family, Fantasy
       </p>
 
-      <v-rating readonly value="4" color="red"></v-rating>
+      <v-rating readonly :value="defaultRating" color="red"></v-rating>
 
       <p class="WatchingDetail-info">
         <span><span>Year</span><br>2018</span>
@@ -89,6 +89,11 @@ export default {
     onAddClick() {
       this.isAdded = !this.isAdded
     },
+  },
+  computed: {
+    defaultRating() {
+      return 4
+    }
   },
   watch: {
     isAdded(newVal) {

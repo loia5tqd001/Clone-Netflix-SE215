@@ -2,7 +2,7 @@
   <div class="ReviewOnMovie-container">
     <div class="ReviewOnMovie-left">
       <img class="__avatar" :src="`../avatars/avatar-${random(9)}.jpeg`" alt="avatar">
-      <v-rating dense readonly value="3" color="red"></v-rating>
+      <v-rating dense readonly :value="random(2, 5)" color="red"></v-rating>
 
     </div>
     <div class="ReviewOnMovie-right">
@@ -44,6 +44,11 @@ export default {
     width: 30em;
     border-radius: .3em;
     margin: .5em;
+    transition: box-shadow .4s;
+
+    &:hover {
+      box-shadow: 3px 3px 6px #fff3, -3px -3px 6px #fff3;
+    }
   }
   .ReviewOnMovie-left {
     display: grid;

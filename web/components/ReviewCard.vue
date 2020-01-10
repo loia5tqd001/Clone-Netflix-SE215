@@ -7,7 +7,7 @@
         <p class="--name"><span>Lisa</span> reviews on</p>
         <p class="--movie-name">The nutcreaker and thr four realms</p>
         <p class="--time">20 minutes ago</p>
-        <v-rating readonly value="3" color="red"></v-rating>
+        <v-rating readonly :value="random(2,5)" color="red"></v-rating>
       </div>
 
     </div>
