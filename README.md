@@ -1,6 +1,6 @@
 # [Clone Netflix for the HCI class - SE215-UIT]
 
-|<p align="center">Watch</p>|<p align="center">Search</p>|
+|<span style="display: inline-block; width: 100%; text-align: center">Watch</span>|<span style="display: inline-block; width: 100%; text-align: center">Search</span>|
 |-|-|
 |![](./capture-watch.jpg)|![](./capture-search.jpg)|
 
